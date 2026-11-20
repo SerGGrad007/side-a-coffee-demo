@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-15T07:45:00Z",
+  "title": "Design System: Side A",
+  "extensions": {
+    "colorMeta": {
+      "ink": {
+        "role": "neutral",
+        "displayName": "Matte ink",
+        "tonalRamp": ["oklch(15% 0.003 285)", "oklch(26% 0.005 285)", "oklch(38% 0.005 285)", "oklch(49% 0.005 285)", "oklch(61% 0.005 285)", "oklch(72% 0.005 285)", "oklch(84% 0.004 285)", "oklch(95% 0.002 285)"]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Chalk",
+        "tonalRamp": ["oklch(15% 0.003 85)", "oklch(26% 0.008 85)", "oklch(38% 0.01 85)", "oklch(49% 0.01 85)", "oklch(61% 0.01 85)", "oklch(72% 0.01 85)", "oklch(84% 0.008 85)", "oklch(95% 0.004 85)"]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted neutral",
+        "tonalRamp": ["oklch(15% 0.003 90)", "oklch(26% 0.008 90)", "oklch(38% 0.01 90)", "oklch(49% 0.01 90)", "oklch(61% 0.01 90)", "oklch(72% 0.01 90)", "oklch(84% 0.008 90)", "oklch(95% 0.004 90)"]
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Muted green",
+        "tonalRamp": ["oklch(15% 0.025 125)", "oklch(26% 0.055 125)", "oklch(38% 0.085 125)", "oklch(49% 0.10 125)", "oklch(61% 0.10 125)", "oklch(72% 0.10 125)", "oklch(84% 0.08 125)", "oklch(95% 0.025 125)"]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Fine rule",
+        "tonalRamp": ["oklch(15% 0.003 285)", "oklch(26% 0.005 285)", "oklch(38% 0.005 285)", "oklch(49% 0.005 285)", "oklch(61% 0.005 285)", "oklch(72% 0.005 285)", "oklch(84% 0.004 285)", "oklch(95% 0.002 285)"]
+      },
+      "track-hover": {
+        "role": "neutral",
+        "displayName": "Track hover",
+        "tonalRamp": ["oklch(15% 0.006 135)", "oklch(26% 0.018 135)", "oklch(38% 0.022 135)", "oklch(49% 0.022 135)", "oklch(61% 0.022 135)", "oklch(72% 0.022 135)", "oklch(84% 0.016 135)", "oklch(95% 0.005 135)"]
+      }
+    },
+    "typographyMeta": {
+      "display": {"displayName": "Condensed display", "purpose": "Large identity headlines; local responsive overrides are recorded in DESIGN.md."},
+      "headline": {"displayName": "Section headline", "purpose": "Major section headings."},
+      "title": {"displayName": "Menu title", "purpose": "Drink names in catalog rows."},
+      "body": {"displayName": "Supporting body", "purpose": "Plain sans-serif explanations with local size variants."},
+      "label": {"displayName": "Catalog metadata", "purpose": "Captions, sleeve labels, and footer metadata."},
+      "action": {"displayName": "Primary action", "purpose": "Bold filled-action label; ordinary links share its size without bold weight."}
+    },
+    "shadows": [],
+    "motion": [
+      {"name": "sleeve-arrives", "value": "0.8s cubic-bezier(.16, 1, .3, 1) both", "purpose": "Visible photo moves from translateY(12px), saturate(.35) to translateY(0), saturate(1). Disabled for reduced motion."},
+      {"name": "track-hover", "value": "background-color .18s ease-out", "purpose": "Informational menu-row hover feedback; disabled for reduced motion."},
+      {"name": "anchor-scroll", "value": "smooth", "purpose": "In-page navigation; becomes auto for reduced motion."}
+    ],
+    "breakpoints": [
+      {"name": "mobile-max", "value": "640px"},
+      {"name": "compact-max", "value": "900px"},
+      {"name": "wide-min", "value": "1440px"}
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary menu anchor",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Square filled in-page anchor; no ordering or checkout behavior.",
+      "html": "<a class=\"ds-button\" href=\"#menu\">Explore the menu<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 12h15M13 5l7 7-7 7\"/></svg></a>",
+      "css": ".ds-button{display:inline-flex;align-items:center;justify-content:space-between;gap:3rem;min-height:56px;padding:.85rem 1.25rem;background:var(--accent,#b8d88a);color:var(--ink,#171719);font:700 .9rem/1.6 var(--body,Arial,Helvetica,sans-serif);text-decoration:none;border-radius:0}.ds-button svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.5;flex-shrink:0}.ds-button:hover{background:var(--paper,#faf8f3)}.ds-button:focus-visible{outline:3px solid var(--accent,#b8d88a);outline-offset:6px}"
+    },
+    {
+      "name": "Section navigation",
+      "kind": "nav",
+      "refersTo": "navigation-link",
+      "description": "Plain, unboxed section links with full-height keyboard and pointer targets.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Main navigation\"><a href=\"#menu\">The menu</a><a href=\"#room\">The room</a><a href=\"#about-demo\">About this demo</a></nav>",
+      "css": ".ds-nav{display:flex;align-items:center;gap:clamp(1rem,3vw,3rem);font-family:var(--body,Arial,Helvetica,sans-serif)}.ds-nav a{display:inline-flex;align-items:center;min-height:44px;padding:.75rem 0;color:var(--paper,#faf8f3);font-size:.9rem;line-height:1.6;text-decoration:none}.ds-nav a:hover{color:var(--accent,#b8d88a)}.ds-nav a:focus-visible{outline:3px solid var(--accent,#b8d88a);outline-offset:6px}@media(max-width:640px){.ds-nav{flex-wrap:wrap;justify-content:space-between;gap:.75rem;width:100%}.ds-nav a{padding:.25rem 0}}"
+    },
+    {
+      "name": "Sleeve note",
+      "kind": "card",
+      "refersTo": "sleeve-note",
+      "description": "Static green information panel with a concentric record mark.",
+      "html": "<aside class=\"ds-sleeve\"><div class=\"ds-record\" aria-hidden=\"true\"><span>A</span></div><h3>The house rotation</h3><p>Start bold, settle into something smooth, or take the slower side.</p><span class=\"ds-label\">SAMPLE SELECTION / SIDE A</span></aside>",
+      "css": ".ds-sleeve{padding:2rem;background:var(--accent,#b8d88a);color:var(--ink,#171719);font-family:var(--body,Arial,Helvetica,sans-serif);line-height:1.6;border-radius:0}.ds-record{width:100px;height:100px;border:1px solid currentColor;border-radius:50%;display:grid;place-items:center;margin-bottom:1.5rem}.ds-record span{width:55px;height:55px;border:1px solid currentColor;border-radius:50%;text-align:center;font:600 2.5rem/53px var(--display,\"Barlow Condensed\",\"Arial Narrow\",sans-serif)}.ds-sleeve h3{font-size:1.05rem;margin:0 0 .75rem}.ds-sleeve p{font-size:.9rem;margin:0}.ds-label{display:block;margin-top:2rem;font-size:.75rem;letter-spacing:.06em}@media(max-width:640px){.ds-sleeve{padding:1.5rem}.ds-record{float:right;width:72px;height:72px;margin:0 0 1rem 1rem}.ds-record span{width:40px;height:40px;font-size:1.75rem;line-height:38px}.ds-sleeve p{max-width:26ch}.ds-label{clear:both}}"
+    },
+    {
+      "name": "Informational menu row",
+      "kind": "custom",
+      "refersTo": "menu-row",
+      "description": "Semantic description-list row; hover is emphasis, not a control state.",
+      "html": "<dl class=\"ds-list\"><div class=\"ds-drink\"><dt><span class=\"ds-track\">A1</span><span>Espresso<small>Short, bold, straight to the point.</small></span></dt><dd>THE ORIGINAL</dd></div></dl>",
+      "css": ".ds-list{margin:0;border-top:1px solid var(--rule,#454547);color:var(--paper,#faf8f3);font-family:var(--body,Arial,Helvetica,sans-serif);line-height:1.6}.ds-drink{display:flex;justify-content:space-between;gap:1rem;padding:1.35rem .75rem;border-bottom:1px solid var(--rule,#454547);transition:background-color .18s ease-out}.ds-drink:hover{background:#232a21}.ds-drink dt{display:flex;align-items:baseline;gap:1.3rem;font-size:1.3rem}.ds-track{color:var(--accent,#b8d88a);font-size:.8rem;font-variant-numeric:tabular-nums;min-width:1.5rem}.ds-drink small{display:block;margin-top:.3rem;color:var(--muted,#b9b7b1);font-size:.8rem}.ds-drink dd{margin:0;align-self:center;font-size:.75rem;letter-spacing:.06em;color:var(--accent,#b8d88a);white-space:nowrap}@media(max-width:900px){.ds-drink dd{display:none}}@media(max-width:640px){.ds-drink{padding-inline:0}.ds-drink dt{font-size:1.2rem;gap:1rem}}@media(prefers-reduced-motion:reduce){.ds-drink{transition:none}}"
+    },
+    {
+      "name": "Native FAQ disclosure",
+      "kind": "custom",
+      "refersTo": "disclosure-summary",
+      "description": "Script-free expandable answer with a rotating plus icon and visible focus.",
+      "html": "<details class=\"ds-faq\"><summary>Can I visit or order a coffee?<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12h14M12 5v14\"/></svg></summary><p>Not here—this is a design demonstration, not an operating café. The menu and brand are illustrative, and there is no ordering or booking service.</p></details>",
+      "css": ".ds-faq{border-bottom:1px solid var(--rule,#454547);color:var(--paper,#faf8f3);font-family:var(--body,Arial,Helvetica,sans-serif);line-height:1.6}.ds-faq summary{display:flex;justify-content:space-between;gap:1.25rem;align-items:center;cursor:pointer;list-style:none;min-height:72px;padding:1.2rem 0;font-size:.9rem}.ds-faq summary::-webkit-details-marker{display:none}.ds-faq summary:hover{color:var(--accent,#b8d88a)}.ds-faq summary:focus-visible{outline:3px solid var(--accent,#b8d88a);outline-offset:6px}.ds-faq svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.5;flex-shrink:0}.ds-faq[open] summary svg{transform:rotate(45deg)}.ds-faq p{margin:0;max-width:65ch;color:var(--muted,#b9b7b1);padding-bottom:1.5rem;font-size:.875rem}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The catalog sleeve",
+    "overview": "Side A pairs an ink-dark listening-room identity with direct coffee photography. Condensed display lettering, fine rules, and aligned catalog entries establish the structure; muted green marks emphasis without turning the page into a field of floating cards.\n\nThe surface is flat and deliberate. Photographs supply real-world depth, while a simple concentric record mark supplies geometry rather than simulated vinyl texture. Spacious section breaks contrast with compact labels and menu rows.",
+    "keyCharacteristics": [
+      "Ink-dark ground, chalk text, and muted-green emphasis.",
+      "Condensed display lettering with plain, readable supporting text.",
+      "Fine rules, squared controls, and aligned catalog rows.",
+      "Real photography and restrained geometric record imagery."
+    ],
+    "rules": [
+      {"name": "The Green Signal Rule", "body": "Green identifies emphasis, action, and catalog annotations; supporting copy remains muted.", "section": "colors"},
+      {"name": "The Two Voices Rule", "body": "Use condensed lettering for identity and headings; keep explanatory copy and functional labels in the body face.", "section": "typography"},
+      {"name": "The Flat Sleeve Rule", "body": "Separate content through rules, space, and flat tone rather than floating-card shadows.", "section": "elevation"}
+    ],
+    "dos": [
+      "**Do** use the Green Signal Rule for emphasis and interaction.",
+      "**Do** retain condensed headings, plain supporting text, and clear keyboard focus.",
+      "**Do** use real photographs with intentional cover crops and truthful captions.",
+      "**Do** keep catalog rows informational and disclosures natively operable."
+    ],
+    "donts": [
+      "**Don't** replace the Flat Sleeve Rule with a floating-card scaffold.",
+      "**Don't** simulate vinyl, embossing, or other physical materials with decorative effects.",
+      "**Don't** introduce an unrelated display face or a monospace costume.",
+      "**Don't** use labels above headings as decorative eyebrows."
+    ]
+  }
+}

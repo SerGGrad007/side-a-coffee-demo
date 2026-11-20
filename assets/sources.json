@@ -1,0 +1,20 @@
+{
+  "coffee.jpg": {
+    "source": "https://www.pexels.com/photo/302899/",
+    "download": "https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    "kind": "stock photograph",
+    "license": "https://www.pexels.com/license/",
+    "usage": "Illustrative coffee preparation, not a real Side A business."
+  },
+  "coffee-table.jpg": {
+    "source": "https://www.pexels.com/photo/1307698/",
+    "download": "https://images.pexels.com/photos/1307698/pexels-photo-1307698.jpeg?auto=compress&cs=tinysrgb&w=1000",
+    "kind": "stock photograph",
+    "license": "https://www.pexels.com/license/",
+    "usage": "Atmosphere reference, not a real Side A location."
+  },
+  "barlow-condensed-semibold.ttf": {
+    "source": "https://github.com/google/fonts/tree/main/ofl/barlowcondensed",
+    "license": "SIL Open Font License 1.1; see FONT-LICENSE.txt"
+  }
+}
